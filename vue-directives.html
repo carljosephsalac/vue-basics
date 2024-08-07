@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue.js Basics</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
-<body>
-  <div id="app">
-    <h1 class="text-3xl font-bold">{{ data1 }}</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Basics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="text-3xl font-bold">{{ data1 }}</h1>
 
-    <h1 class="text-3xl font-bold" v-text="data2"></h1>
+      <h1 class="text-3xl font-bold" v-text="data2"></h1>
 
-    <h1 class="text-3xl font-bold" v-html="data3"></h1>
+      <h1 class="text-3xl font-bold" v-html="data3"></h1>
 
-    <h1 class="text-3xl font-bold" v-bind:class="myClass">{{ data4 }}</h1>
-    <h1 class="text-3xl font-bold" :class="myClass">{{ data5 }}</h1>
-    <h1 class="text-3xl font-bold" :class="true ? 'text-green-500' : ''">{{ data6 }}</h1>
+      <h1 class="text-3xl font-bold" v-bind:class="myClass">{{ data4 }}</h1>
+      <h1 class="text-3xl font-bold" :class="myClass">{{ data5 }}</h1>
+      <h1 class="text-3xl font-bold" :class="true ? 'text-green-500' : ''">
+        {{ data6 }}
+      </h1>
 
-    <button class="block" v-on:click="count++">
-      Number is: {{ count }} (v-on:click)
-    </button>
+      <button class="block" v-on:click="count++">
+        Number is: {{ count }} (v-on:click)
+      </button>
 
-    <button @click="count++">
-      Number is: {{ count }} (@click)
-    </button>
+      <button @click="count++">Number is: {{ count }} (@click)</button>
 
-    <h1 class="text-3xl font-bold" v-show="true">v-show</h1>
-    <h1 class="text-3xl font-bold" v-show="false">v-show</h1>
+      <h1 class="text-3xl font-bold" v-show="true">v-show</h1>
+      <h1 class="text-3xl font-bold" v-show="false">v-show</h1>
 
-    <h1 class="text-3xl font-bold" v-if="true">v-if</h1>
-    <h1 class="text-3xl font-bold" v-if="false">v-if</h1>
+      <h1 class="text-3xl font-bold" v-if="true">v-if</h1>
+      <h1 class="text-3xl font-bold" v-if="false">v-if</h1>
 
-    <h1 class="text-3xl font-bold" v-if="false">v-if</h1>
-    <h1 class="text-3xl font-bold" v-else-if="true">v-else-if</h1>
+      <h1 class="text-3xl font-bold" v-if="false">v-if</h1>
+      <h1 class="text-3xl font-bold" v-else-if="true">v-else-if</h1>
 
-    <h1 class="text-3xl font-bold" v-if="false">v-if</h1>
-    <h1 class="text-3xl font-bold" v-else-if="false">v-else-if</h1>
-    <h1 class="text-3xl font-bold" v-else>v-else</h1>
+      <h1 class="text-3xl font-bold" v-if="false">v-if</h1>
+      <h1 class="text-3xl font-bold" v-else-if="false">v-else-if</h1>
+      <h1 class="text-3xl font-bold" v-else>v-else</h1>
 
-    <h1 class="text-3xl font-bold inline-block me-1">v-for : </h1>
-    <h1 class="text-3xl font-bold inline-block me-2" v-for="num in nums">{{ num }},</h1>
-    
-  </div>
+      <h1 class="text-3xl font-bold inline-block me-1">v-for :</h1>
+      <h1 class="text-3xl font-bold inline-block me-2" v-for="num in nums">
+        {{ num }},
+      </h1>
+    </div>
 
-  <script>
-    const { createApp } = Vue;
+    <script>
+      const { createApp } = Vue;
 
-    createApp({
-      data() {
-        return {
-          data1: 'Mustache Syntax',
-          data2: 'v-text',
-          data3: '<i>v-html</i>',          
-          data4: 'v-bind',          
-          data5: ':class (v-bind shorthand)',          
-          data6: 'expressions',          
-          myClass: 'text-blue-500',
-          count: 0,
-          nums: [1, 2, 3, 4, 5]
-        };
-      },
-    }).mount('#app');
-  </script>
-</body>
+      createApp({
+        data() {
+          return {
+            data1: "Mustache Syntax",
+            data2: "v-text",
+            data3: "<i><b>v-html</b></i>",
+            data4: "v-bind",
+            data5: ":class (v-bind shorthand)",
+            data6: "expressions",
+            myClass: "text-blue-500",
+            count: 0,
+            nums: [1, 2, 3, 4, 5],
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
 </html>
