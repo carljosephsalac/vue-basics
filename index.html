@@ -11,28 +11,28 @@
   <body>
     <div id="app">      
       <div class="m-5 bg-gray-200 p-4 flex flex-col justify-center items-center mx-auto max-w-sm rounded-lg">
-        <form class="w-full">
+        <form @submit.prevent="addUser" class="w-full">
           <div class="mb-5">
-            <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="username" class="block mb-2 text-sm font-medium text-gray-900">
               Username
             </label>
             <input type="text" id="username" placeholder="Type here" class="input input-bordered w-full" required 
-            :value="username" v-model="username"/>            
+             v-model="user.username"/>            
           </div>
 
           <div class="mb-5">
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">
               Your email
             </label>
             <input type="email" id="email" placeholder="Type here" class="input input-bordered w-full" required 
-            :value="email" v-model="email"/>            
+              v-model="user.email"/>            
           </div>
 
           <p class="mb-2">Membership status</p>
           <div class="flex w-full justify-between">
             <div class="flex items-center mb-4">
-              <input id="default-radio-1" type="radio" name="default-radio" class="radio" checked
-                value="Guest" v-model="membership" />
+              <input id="default-radio-1" type="radio" name="default-radio" class="radio"
+                value="Guest" v-model="user.membership" />
               <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">
                 Guest
               </label>
@@ -40,7 +40,7 @@
 
             <div class="flex items-center mb-4">
               <input id="default-radio-1" type="radio" name="default-radio" class="radio"
-                value="Premium" v-model="membership" />
+                value="Premium" v-model="user.membership" />
               <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">
                 Premium
               </label>
@@ -48,22 +48,44 @@
 
             <div class="flex items-center mb-4">
               <input id="default-radio-1" type="radio" name="default-radio" class="radio"
-                value="VIP" v-model="membership" />
+                value="VIP" v-model="user.membership" />
               <label for="default-radio-1" class="ms-2 text-sm font-medium text-gray-900">
                 VIP
               </label>
             </div>            
           </div>
 
-          <button class="btn btn-neutral btn-sm" type="submit">Submit</button>          
+          <button class="btn btn-neutral btn-sm" type="submit" :disabled="isFormInvalid">
+            Submit
+          </button>          
         </form>
       </div>
 
       <div class="m-5 bg-gray-200 p-4 flex flex-col mx-auto max-w-sm rounded-lg">
         <h1 class="text-3xl mb-2">User list:</h1>
-        <p>{{ username }}</p>
-        <p>{{ email }}</p>
-        <p>{{ membership }}</p>
+        <div class="overflow-x-auto">
+          <table class="table table-xs">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Membership</th>                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th></th>
+                <td>Cy Ganderton</td>
+                <td>Quality Control Specialist</td>
+                <td>Littel, Schaden and Vandervort</td>
+                <td>Canada</td>
+                <td>12/16/2020</td>
+                <td>Blue</td>
+              </tr>              
+            </tbody>            
+          </table>
+        </div>
       </div>
     </div>
 
