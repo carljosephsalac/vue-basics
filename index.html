@@ -78,7 +78,13 @@
                 <th>{{ user.id }}</th>
                 <td>{{ user.username }}</td>                
                 <td>{{ user.email }}</td>                
-                <td>{{ user.membership }}</td>                
+                <td :class="[
+                    {'text-purple-500' : user.membership === 'Premium'},
+                    {'text-orange-500' : user.membership === 'VIP'}
+                  ]"
+                  class="text-green-500">
+                  {{ user.membership }}
+                </td>                
               </tr>              
             </tbody>            
           </table>
