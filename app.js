@@ -12,6 +12,7 @@ createApp({
     };
   },
   methods: {
+    // This method in the parent component is executed when the add event is emitted from the child component. It takes the user data passed from the child and adds it to the users array
     add(user) {
         this.users.push({
             id: user.id++,

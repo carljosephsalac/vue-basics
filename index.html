@@ -9,9 +9,12 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
-        <div id="app">      
+        <div id="app">
+            <!-- 
+                @add="add", the first add refers to the custom event name emitted by the child(UserCreate.js), and the second add refers to the method in the parent(App.js) that handles this event.
+            -->      
             <user-create @add="add"></user-create>
-
+            
             <user-list :users="users"></user-list>
 
             <the-watcher></the-watcher>

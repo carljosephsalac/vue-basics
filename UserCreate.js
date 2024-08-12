@@ -16,7 +16,7 @@ export default {
       },
       methods: {
         addUser() {
-            this.$emit('add', this.user); // custom event listener
+            this.$emit('add', this.user); // custom event 'add' for adding a user
     
             // reset form
             this.user.username = '';
