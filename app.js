@@ -1,10 +1,11 @@
 import UserList from "./UserList.js";
 import UserCreate from "./UserCreate.js";
+import TheWatcher from "./TheWatcher.js";
 
 const { createApp } = Vue;
 
 createApp({
-  components: { UserList, UserCreate },
+  components: { UserList, UserCreate, TheWatcher },
   data() {
     return {
         users: [],
