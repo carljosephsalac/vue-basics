@@ -63,7 +63,7 @@
 
       <div class="m-5 bg-gray-200 p-4 flex flex-col mx-auto max-w-sm rounded-lg">
         <h1 class="text-3xl mb-2">User list:</h1>
-        <div class="overflow-x-auto">
+        <div v-if="users.length" class="overflow-x-auto">
           <table class="table table-xs">
             <thead>
               <tr>
@@ -83,6 +83,7 @@
             </tbody>            
           </table>
         </div>
+        <h1 v-else class="text-xl mb-2">Please add user</h1>
       </div>
     </div>
 
